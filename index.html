@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة المهام | TaskFlow Pro</title>
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============ الحاوية الرئيسية ============ -->
+    <div class="app-container">
+        <!-- الرأس -->
+        <header class="app-header">
+            <span class="logo-icon">✅</span>
+        <h3>/h3>+967لتواصل :👈773662495</h3> 
+            <h1>TaskFlow Pro</h1>
+            <p class="subtitle">نظام إدارة المهام الذكي</p>
+        </header>
+
+        <!-- إحصائيات سريعة -->
+        <div class="stats-row" id="statsRow">
+            <div class="stat-card">
+                <div class="stat-num" id="statTotal">0</div>
+                <div class="stat-label">إجمالي المهام</div>
+            </div>
+            <div class="stat-card done">
+                <div class="stat-num" id="statDone">0</div>
+                <div class="stat-label">مكتملة</div>
+            </div>
+            <div class="stat-card urgent">
+                <div class="stat-num" id="statUrgent">0</div>
+                <div class="stat-label">عالية الأولوية</div>
+            </div>
+        </div>
+
+        <!-- نموذج إضافة / تعديل مهمة -->
+        <form class="task-form" id="taskForm" autocomplete="off">
+            <input type="hidden" id="editId" value="">
+            <input type="text" id="taskTitle" placeholder="عنوان المهمة..." maxlength="120" required>
+            <div class="form-row">
+                <input type="date" id="taskDueDate">
+                <select id="taskPriority">
+                    <option value="low">🟢 منخفضة</option>
+                    <option value="medium" selected>🟡 متوسطة</option>
+                    <option value="high">🔴 عالية</option>
+                </select>
+                <button type="submit" class="btn btn-add" id="submitBtn">➕ إضافة مهمة</button>
+            </div>
+        </form>
+
+        <!-- شريط البحث والتصفية -->
+        <div class="filter-bar">
+            <div class="search-wrap">
+                <input type="text" id="searchInput" placeholder="🔍 بحث عن مهمة...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="filter-chips">
+                <button class="chip active" data-filter="all">الكل</button>
+                <button class="chip" data-filter="active">النشطة</button>
+                <button class="chip" data-filter="completed">المكتملة</button>
+                <button class="chip" data-filter="high">🔴 عالية</button>
+            </div>
+        </div>
+
+        <!-- قائمة المهام -->
+        <ul class="task-list" id="taskList">
+            <!-- تُملأ ديناميكيًا عبر JavaScript -->
+        </ul>
+    </div>
+
+    <!-- حاوية إشعارات التوست -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
